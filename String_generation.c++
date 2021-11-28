@@ -31,7 +31,7 @@ int main() {
             s2.insert(j+1, res2);
         }
 	}
-	cout << "s1: " << s1 << endl;
-	cout << "s2: " << s2 << endl; 
+	cout << s1 << endl;
+	cout << s2 << endl; 
 	return 0;
 }
