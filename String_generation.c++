@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-	freopen("BaseTestcases_CS570FinalProject/input1.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+	freopen("BaseTestcases_CS570FinalProject_Updated/input2.txt", "r", stdin);
+	freopen("output2.txt", "w", stdout);
     string res1, res2;
 	string s1;
 	cin >> s1;
