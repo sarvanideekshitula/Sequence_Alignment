@@ -189,17 +189,54 @@ vector<string> Divide_and_Conquer_Alignment(string X, string Y) {
   return dcOutput;
 }
 
-int main() { 
+vector<string> String_Generation(string filename) {
+  string file = "BaseTestcases_CS570FinalProject_Updated/" + filename;
+  freopen(file.c_str(), "r", stdin);
+
+  vector<string> result;
+  string res1, res2;
+  string s1;
+  cin >> s1;
+  string p;
+  while(true){
+      cin >> p;
+      if(int(p[0]) >= 48 && int(p[0]) <= 57){
+          stringstream convert(p);
+          int x = 0;
+          convert >> x;
+          if(x < s1.length()){
+              res1 = s1;
+              s1.insert(x+1, res1);
+          }
+      } else{
+          break;
+      }
+  }
+  string s2 = p;
+  int j;
+  while(cin >> j){
+        if(j < s2.length()){
+            res2 = s2;
+            s2.insert(j+1, res2);
+        }
+  }
+  result.push_back(s1);
+  result.push_back(s2);
+
+  return result;
+}
+
+int main(int argc, char** argv) 
+{ 
+  string X = argv[1];
+  string Y = argv[2];
 
   // string X = "ACACACTGACTACTGACTGGTGACTACTGACTGGACTGACTACTGACTGGTGACTACTGACTGG";
   // string Y = "TTATTATACGCGACGCGATTATACGCGACGCG";
-
-  freopen("output1.txt", "r", stdin);
-  string X, Y;
-  cin >> X; cin >> Y;
+  // vector<string> Strings = String_Generation("input1.txt");
   vector<string> result = Divide_and_Conquer_Alignment(X, Y);
-  cout << result[0].substr(0, 50) << endl;
-  cout << result[1].substr(0, 50) << endl;
-  cout << result[2] << endl;
+  // cout << result[0].substr(0, 50) << endl;
+  // cout << result[1].substr(0, 50) << endl;
+  // cout << result[2] << endl;
   return 0;
 } 
